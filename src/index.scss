@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+:root {
+	--color-bg: #181818;
+	--color-primary: #fff;
+	--color-secondary: rgb(0, 193, 232);
+	--color-scrollbar: rgb(29, 59, 66);
+	caret-color: transparent;
+	font-family: "Noto Sans", sans-serif;
+}
+hr {
+	width: 70%;
+	border: 1px solid var(--color-secondary);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+html,
+body {
+	padding: 0;
+	margin: 0;
+
+	background: var(--color-bg);
+	color: var(--color-primary);
+}
+span {
+	color: var(--color-secondary);
+}
+button {
+	background: none;
+	cursor: pointer;
+	border: 2px solid var(--color-secondary);
+	font-family: "Noto Sans", sans-serif;
+	background: var(--color-secondary);
+	color: var(--color-bg);
+
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	font-size: 1rem;
+	font-weight: 400;
+	transition: all 0.2s ease-in-out;
+}
+button:hover {
+	color: var(--color-secondary);
+	background: var(--color-bg);
+}
+.btn-no-border {
+	border: none;
+	background: none;
+	color: var(--color-primary);
+}
+.btn-red-hover {
+	&:hover {
+		background: none;
+		color: rgb(255, 168, 168) !important;
+	}
+}
+h2 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+h1 {
+	text-transform: capitalize;
+}
+
+textarea {
+	border: none;
+	border: 2px solid var(--color-primary);
+	background: var(--color-bg);
+	color: var(--color-primary);
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	caret-color: var(--color-secondary);
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	transition: all 0.2s ease-in-out;
+
+	&:focus {
+		outline: none;
+		border: 2px solid var(--color-secondary);
+	}
+
+	&:disabled {
+		background: var(--color-bg);
+		color: var(--color-primary);
+	}
+
+	&:disabled:focus {
+		border-bottom: 2px solid var(--color-secondary);
+	}
+
+	&:disabled:hover {
+		border-bottom: 2px solid var(--color-secondary);
+	}
+}
+
+::-webkit-scrollbar {
+	width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-scrollbar);
+}
+.step-btn-icon {
+	color: var(--color-primary);
+}

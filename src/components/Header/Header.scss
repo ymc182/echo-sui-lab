@@ -1,0 +1,14 @@
+.app_header {
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	align-items: center;
+}
+.app_header-logo {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	img {
+		height: 5rem;
+	}
+}

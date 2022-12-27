@@ -1,0 +1,96 @@
+.app_application {
+	display: flex;
+	flex-direction: column;
+	min-height: 50vh;
+	border: 2px solid var(--color-primary);
+	padding: 1rem;
+	width: 1000px;
+	max-width: 80vw;
+	margin: 1rem auto;
+	flex-grow: 1;
+	text-align: center;
+	border-radius: 1rem;
+}
+
+.app_application-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.app_application-next-btn {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 5rem;
+}
+.app_application-stepper {
+	margin-top: 12vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.app_application_step {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: grey;
+}
+.app_application_current-step {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-secondary);
+	transition: color 0.5s ease-in-out;
+	i {
+		font-size: 1rem;
+	}
+}
+.app_application-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.app_application-desc-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.app_application-desc-container-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	border: 2px solid var(--color-primary);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+	font-weight: lighter;
+}
+
+.app_application-desc-container-card-selected {
+	color: var(--color-secondary);
+	border: 2px solid var(--color-secondary);
+
+	hr {
+		transition: all 0.5s ease-in-out;
+		border-color: var(--color-bg);
+	}
+}
+.app_application-questions {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	align-items: center;
+}
