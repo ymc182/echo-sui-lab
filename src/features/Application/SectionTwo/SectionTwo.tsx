@@ -25,10 +25,9 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 			toast.info("Please verify again");
 			return;
 		}
-
-		console.log(search.get("code"));
 		setLoading(true);
 		try {
+			console.log("Verifying");
 			const result = await fetch("https://echo-lab-backend.onrender.com/auth", {
 				method: "POST",
 				headers: {
@@ -39,7 +38,9 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 					walletId: address,
 				}),
 			});
+			console.log("Result:", result);
 			const data = await result.json();
+			console.log("Data:", data);
 			if (data.success) {
 				setCurrentSection(3);
 			}
