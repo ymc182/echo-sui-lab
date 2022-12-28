@@ -28,21 +28,27 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 
 		console.log(search.get("code"));
 		setLoading(true);
-		const result = await fetch("https://echo-lab-backend.onrender.com/auth", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				code: search.get("code"),
-				walletId: address,
-			}),
-		});
-		const data = await result.json();
-		if (data.success) {
-			setCurrentSection(3);
+		try {
+			const result = await fetch("https://echo-lab-backend.onrender.com/auth", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					code: search.get("code"),
+					walletId: address,
+				}),
+			});
+			const data = await result.json();
+			if (data.success) {
+				setCurrentSection(3);
+			}
+			window.localStorage.setItem("usedCode", search.get("code")!);
+		} catch (e) {
+			console.error(e);
+			window.localStorage.setItem("usedCode", search.get("code")!);
+			toast.error("Something went wrong");
 		}
-		window.localStorage.setItem("usedCode", search.get("code")!);
 	}
 
 	return (
