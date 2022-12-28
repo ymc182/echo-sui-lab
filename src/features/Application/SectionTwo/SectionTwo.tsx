@@ -19,28 +19,30 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 		verify();
 	}, [search, address]);
 	async function verify() {
-		if (!address) return;
-		if (search.get("code")) {
-			if (window.localStorage.getItem("usedCode") == search.get("code")) return;
+		if (!address || !search.get("code")) return;
 
-			console.log(search.get("code"));
-			setLoading(true);
-			const result = await fetch("/api/discord/verify", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					code: search.get("code"),
-					walletId: address,
-				}),
-			});
-			const data = await result.json();
-			if (data.success) {
-				window.localStorage.setItem("usedCode", search.get("code")!);
-				setCurrentSection(3);
-			}
+		if (window.localStorage.getItem("usedCode") == search.get("code")) {
+			toast.info("Please verify again");
+			return;
 		}
+
+		console.log(search.get("code"));
+		setLoading(true);
+		const result = await fetch("/api/discord/verify", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				code: search.get("code"),
+				walletId: address,
+			}),
+		});
+		const data = await result.json();
+		if (data.success) {
+			setCurrentSection(3);
+		}
+		window.localStorage.setItem("usedCode", search.get("code")!);
 	}
 
 	return (
