@@ -28,7 +28,7 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 
 		console.log(search.get("code"));
 		setLoading(true);
-		const result = await fetch("/api/discord/verify", {
+		const result = await fetch("https://echo-lab-backend.onrender.com/auth", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
