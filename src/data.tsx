@@ -1,8 +1,8 @@
 export const DescribeYou = [
 	{
 		id: 1,
-		title: "Founder/Developer",
-		description: "I am a founder or developer of a blockchain project",
+		title: "Founder",
+		description: "I am a founder of a blockchain project",
 	},
 	{
 		id: 2,
@@ -33,5 +33,10 @@ export const DescribeYou = [
 		id: 7,
 		title: "Collector",
 		description: "I am a NFT collector",
+	},
+	{
+		id: 8,
+		title: "Developer",
+		description: "I am a developer",
 	},
 ];

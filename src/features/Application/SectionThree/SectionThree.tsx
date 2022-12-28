@@ -39,7 +39,7 @@ export default function SectionThree({ show, id, setSelectedItems, selectedRoles
 									: "app_application-desc-container-card"
 							}
 						>
-							<div>{item.title}</div>
+							<h4>{item.title}</h4>
 							<hr />
 							<div>{item.description}</div>
 						</div>
