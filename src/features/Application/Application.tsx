@@ -59,7 +59,12 @@ export default function Application() {
 			<div className="app_application">
 				<div className="app_application-content">
 					<SectionOne id="section1" show={currentSection == 1} />
-					<SectionTwo id="section2" show={currentSection == 2} setCurrentSection={setCurrentSection} />
+					<SectionTwo
+						id="section2"
+						show={currentSection == 2}
+						address={address}
+						setCurrentSection={setCurrentSection}
+					/>
 					<SectionThree
 						id="section3"
 						show={currentSection == 3}

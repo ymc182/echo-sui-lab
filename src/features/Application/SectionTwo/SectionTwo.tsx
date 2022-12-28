@@ -5,26 +5,42 @@ import { toast } from "react-toastify";
 type SectionProps = {
 	show?: boolean;
 	id: string;
+	address?: string;
 	setCurrentSection: React.Dispatch<React.SetStateAction<number>>;
 };
-export default function SectionTwo({ show, id, setCurrentSection }: SectionProps) {
+export default function SectionTwo({ show, id, address, setCurrentSection }: SectionProps) {
 	//get query from url
+
 	const [search] = useSearchParams();
 	const [loading, setLoading] = React.useState(false);
 
 	useEffect(() => {
-		//get url without query
-
+		verify();
+	}, [search]);
+	async function verify() {
+		if (!address) return;
 		if (search.get("code")) {
+			if (window.localStorage.getItem("usedCode") == search.get("code")) return;
+
 			console.log(search.get("code"));
 			setLoading(true);
-			setTimeout(() => {
-				setLoading(false);
-				toast.success("Verified");
+			const result = await fetch("/api/discord/verify", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					code: search.get("code"),
+					walletId: address,
+				}),
+			});
+			const data = await result.json();
+			if (data.success) {
+				window.localStorage.setItem("usedCode", search.get("code")!);
 				setCurrentSection(3);
-			}, 1000);
+			}
 		}
-	}, [search]);
+	}
 
 	return (
 		<div
