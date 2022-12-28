@@ -16,7 +16,7 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 
 	useEffect(() => {
 		verify();
-	}, [search]);
+	}, [search, address]);
 	async function verify() {
 		if (!address) return;
 		if (search.get("code")) {

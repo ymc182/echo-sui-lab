@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 type SectionProps = {
 	show?: boolean;
 	id: string;
@@ -17,7 +19,15 @@ export default function SectionFour({ show, id, answerRef }: SectionProps) {
 				<div className="app_application-questions">
 					<h1>What makes you join this whitelist?</h1>
 					<textarea ref={answerRef} rows={5} cols={25} placeholder="Enter Answer" />
-					<button>Submit</button>
+					<Link to="/">
+						<button
+							onClick={() => {
+								toast.success("Submitted!");
+							}}
+						>
+							Submit
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>
