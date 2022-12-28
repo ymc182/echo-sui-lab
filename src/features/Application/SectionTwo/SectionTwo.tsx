@@ -15,6 +15,7 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 	const [loading, setLoading] = React.useState(false);
 
 	useEffect(() => {
+		console.log(address, search.get("code"));
 		verify();
 	}, [search, address]);
 	async function verify() {
