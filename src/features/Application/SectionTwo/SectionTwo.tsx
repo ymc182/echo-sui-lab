@@ -36,6 +36,7 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 				body: JSON.stringify({
 					code: search.get("code"),
 					walletId: address,
+					project: "echo-lab",
 				}),
 			});
 			console.log("Result:", result);
