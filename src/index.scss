@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 :root {
-	--color-bg: #181818;
-	--color-primary: #fff;
+	--color-bg: #fff;
+	--color-primary: #181818;
 	--color-secondary: rgb(0, 193, 232);
 	--color-scrollbar: rgb(29, 59, 66);
 	caret-color: transparent;
 	font-family: "Noto Sans", sans-serif;
+
+	--color-bg-light: #fff;
+	--color-primary-light: #181818;
+	--color-secondary-light: rgb(0, 193, 232);
+	--color-scrollbar-light: rgb(29, 59, 66);
 }
+
+//light mode
+
 hr {
 	width: 70%;
 	border: 1px solid var(--color-secondary);
@@ -51,7 +59,7 @@ button:hover {
 .btn-red-hover {
 	&:hover {
 		background: none;
-		color: rgb(255, 168, 168) !important;
+		color: rgb(251, 0, 0) !important;
 	}
 }
 h2 {
@@ -62,13 +70,14 @@ h1 {
 	text-transform: capitalize;
 }
 
-textarea {
+input {
 	border: none;
 	border: 2px solid var(--color-primary);
 	background: var(--color-bg);
 	color: var(--color-primary);
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
+	width: 90%;
 	caret-color: var(--color-secondary);
 	font-family: "Noto Sans", sans-serif;
 	font-size: 1rem;

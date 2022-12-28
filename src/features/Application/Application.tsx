@@ -6,13 +6,14 @@ import SectionFour from "./SectionFour/SectionFour";
 import SectionOne from "./SectionOne/SectionOne";
 import SectionThree from "./SectionThree/SectionThree";
 import SectionTwo from "./SectionTwo/SectionTwo";
-
+import { GrPrevious, GrNext } from "react-icons/gr";
 export default function Application() {
 	const { address, disconnect } = useWallet();
 	const [startSection, setStartSection] = React.useState(address ? 2 : 1);
 	const [currentSection, setCurrentSection] = React.useState(startSection);
 	const [selectedRoles, setSelectedRoles] = React.useState<string[]>([]);
-	const answerRef = React.useRef<HTMLTextAreaElement>(null);
+	const answerRef = React.useRef<HTMLInputElement>(null);
+	const websiteRef = React.useRef<HTMLInputElement>(null);
 	useEffect(() => {
 		setStartSection(address ? 2 : 1);
 		setCurrentSection(address ? 2 : 1);
@@ -71,13 +72,14 @@ export default function Application() {
 						setSelectedItems={setSelectedRoles}
 						selectedRoles={selectedRoles}
 					/>
-					<SectionFour id="section4" show={currentSection == 4} answerRef={answerRef} />
+					<SectionFour id="section4" show={currentSection == 4} answerRef={answerRef} websiteRef={websiteRef} />
 				</div>
 			</div>
 			<div className="app_application-next-btn">
-				<button onClick={prevSection} className="btn-no-border">
-					Bk
-				</button>
+				<div className="app_application-step-icon">
+					<GrPrevious onClick={prevSection} />
+				</div>
+
 				<button
 					onClick={restart}
 					className="btn-no-border btn-red-hover"
@@ -85,11 +87,11 @@ export default function Application() {
 						color: "rgba(214, 55, 55, 0.861)",
 					}}
 				>
-					Re
+					Reset
 				</button>
-				<button onClick={nextSection} className="btn-no-border">
-					Nx
-				</button>
+				<div className="app_application-step-icon">
+					<GrNext onClick={nextSection} />
+				</div>
 			</div>
 		</div>
 	);

@@ -7,7 +7,7 @@ export default function Header() {
 		<div className="app_header">
 			<div className="app_header-logo">
 				<Link to="/">
-					<img src="/ECHO-dark.png" alt="logo" />
+					<img src="/ECHO-light.png" alt="logo" />
 				</Link>
 			</div>
 			<ConnectionBtn />

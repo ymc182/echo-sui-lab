@@ -4,9 +4,10 @@ import { toast } from "react-toastify";
 type SectionProps = {
 	show?: boolean;
 	id: string;
-	answerRef: React.RefObject<HTMLTextAreaElement>;
+	answerRef: React.RefObject<HTMLInputElement>;
+	websiteRef: React.RefObject<HTMLInputElement>;
 };
-export default function SectionFour({ show, id, answerRef }: SectionProps) {
+export default function SectionFour({ show, id, answerRef, websiteRef }: SectionProps) {
 	return (
 		<div
 			id={id}
@@ -17,8 +18,10 @@ export default function SectionFour({ show, id, answerRef }: SectionProps) {
 		>
 			<div className="app_application-title">
 				<div className="app_application-questions">
-					<h1>What makes you join this whitelist?</h1>
-					<textarea ref={answerRef} rows={5} cols={25} placeholder="Enter Answer" />
+					<h3>What makes you join this whitelist?</h3>
+					<input ref={answerRef} placeholder="Enter Answer" />
+					<h3>Do you have any projects / portfolio / website? </h3>
+					<input ref={answerRef} placeholder="Enter Answer" />
 					<Link to="/">
 						<button
 							onClick={() => {

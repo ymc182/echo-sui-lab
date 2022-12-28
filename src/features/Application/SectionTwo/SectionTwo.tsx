@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { RxDiscordLogo, RxTwitterLogo } from "react-icons/rx";
 type SectionProps = {
 	show?: boolean;
 	id: string;
@@ -62,7 +62,7 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 			className="app_application-section"
 		>
 			<div className="app_application-title">
-				<h1>Verify With Discord</h1>
+				<h3>Verify With Discord</h3>
 			</div>
 
 			<button
@@ -74,8 +74,31 @@ export default function SectionTwo({ show, id, address, setCurrentSection }: Sec
 					window.location.href = `https://discord.com/api/oauth2/authorize?client_id=1057494452828127322&redirect_uri=${url}&response_type=code&scope=identify`;
 				}}
 				disabled={loading}
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					gap: "0.5rem",
+					margin: "0 auto",
+				}}
 			>
-				{loading ? "Loading.." : "Verify"}
+				{loading ? "Loading.." : "Verify"} <RxDiscordLogo />
+			</button>
+			<div className="app_application-title">
+				<h3>Verify With Twitter</h3>
+			</div>
+
+			<button
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					gap: "0.5rem",
+					margin: "0 auto",
+				}}
+			>
+				Verify
+				<RxTwitterLogo />
 			</button>
 		</div>
 	);

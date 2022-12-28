@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<div className="app_home">
 			<div className="app_home-main">
-				<img src="/ECHO-dark.png" alt="ECHO" width={200} />
+				<img src="/ECHO-light.png" alt="ECHO" width={200} />
 				<br />
 				<Link to="/application">
 					<button>Apply in 30 sec</button>

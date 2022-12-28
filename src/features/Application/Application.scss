@@ -11,7 +11,18 @@
 	text-align: center;
 	border-radius: 1rem;
 }
+.app_application-step-icon {
+	cursor: pointer;
+	padding: 0.5rem;
+	transition: all 0.3s ease-in;
+	height: 20px;
+	width: 20px;
+}
 
+.app_application-step-icon:hover {
+	background: var(--color-secondary);
+	border-radius: 50%;
+}
 .app_application-content {
 	display: flex;
 	flex-direction: column;
