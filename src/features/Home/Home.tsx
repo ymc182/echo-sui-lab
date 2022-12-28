@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import step1 from "../../assets/images/step1.png";
 import step2 from "../../assets/images/step2.png";
 import step3 from "../../assets/images/step3.png";
+import { motion } from "framer-motion";
 import "./Home.scss";
 export default function Home() {
 	return (
@@ -21,20 +22,24 @@ export default function Home() {
 					merit.
 				</i>
 				<div className="app_home-info-steps">
-					<div className="app_home-info-steps-step">
+					<motion.div className="app_home-info-steps-step">
 						<img src={step1} alt="Step 1" />
 						<i>Connect your wallet</i>
-					</div>
-					<div className="app_home-info-steps-step">
+					</motion.div>
+					<motion.div className="app_home-info-steps-step">
 						<img src={step2} alt="Step 2" />
 						<i>Verify your profile </i>
-					</div>
-					<div className="app_home-info-steps-step">
+					</motion.div>
+					<motion.div className="app_home-info-steps-step">
 						<img src={step3} alt="Step 3" />
 						<i>Answer some question</i>
-					</div>
+					</motion.div>
 				</div>
 			</div>
+
+			<motion.div className="scrolling-vertical-text">
+				<h1>ECHO-LAB</h1>
+			</motion.div>
 		</div>
 	);
 }
